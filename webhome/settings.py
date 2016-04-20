@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'home',
+    'files',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -100,3 +103,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Split settings:
+try:
+    LOCAL_SETTINGS
+except NameError:
+    try:
+        from local_settings import *  # W0401 Ignore
+    except ImportError:
+        pass
