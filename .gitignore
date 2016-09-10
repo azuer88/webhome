@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
 
 # C extensions
 *.so
@@ -22,7 +23,9 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-bin/
+*.py[cod]
+__pycache__/
+*$py.class
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -43,6 +46,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *,cover
+.hypothesis/
 
 # Translations
 *.mo
@@ -50,10 +54,9 @@ coverage.xml
 
 # Django stuff:
 *.log
-local_settings.py
-db.sqlite3*
-# */migrations/*
-*/local_settings.py
+db.sqlite*
+src/janus/static
+*.old
 
 # Sphinx documentation
 docs/_build/
@@ -61,9 +64,24 @@ docs/_build/
 # PyBuilder
 target/
 
-# pycharm
-.idea/
+#Ipython Notebook
+.ipynb_checkpoints
 
-# spyder
-.spyderproject
+#nodejs
+node_modules/
 
+#bower
+bower_components/
+
+# webpack output
+src/assets/bundles
+webpack-stats*.json
+
+# vim temporary files
+*.swp
+
+# webstorm files
+.idea
+
+# pdf
+*.pdf
